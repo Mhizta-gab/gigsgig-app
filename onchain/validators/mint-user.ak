@@ -32,7 +32,7 @@ validator mint_user(input_utxo: OutputReference) {
         tx: Transaction
     ) {
         let Transaction {inputs, mint, ..}  = tx
-        expect Some(own_input) = find_input(inputs, input_utxo)
+        expect Some(_own_input) = find_input(inputs, input_utxo)
         expect [Pair(asset_name , amount)] =
           mint 
             |> assets.tokens(policy_id)
